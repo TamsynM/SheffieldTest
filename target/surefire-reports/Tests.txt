@@ -1,0 +1,12 @@
+-------------------------------------------------------------------------------
+Test set: Tests
+-------------------------------------------------------------------------------
+Tests run: 2, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 10.779 s <<< FAILURE! - in Tests
+Tests.assertCopyright  Time elapsed: 2.707 s  <<< FAILURE!
+java.lang.NullPointerException
+	at Tests.assertCopyright(Tests.java:26)
+
+Tests.loginFailure  Time elapsed: 1.989 s  <<< FAILURE!
+java.lang.NullPointerException
+	at Tests.loginFailure(Tests.java:33)
+
