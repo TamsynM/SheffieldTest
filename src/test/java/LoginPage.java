@@ -2,7 +2,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class LoginPage {
+public class LoginPage extends PageObject {
 
     private final String USERNAME_INPUT = "tester";
     private final String PASSWORD_INPUT = "password";
@@ -17,7 +17,8 @@ public class LoginPage {
     private WebElement loginButton;
 
     public LoginPage(WebDriver driver) {
-        super();
+
+        super(driver);
     }
 
     public void enterUsername() {

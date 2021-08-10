@@ -1,19 +1,17 @@
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
-import org.testng.annotations.*;
-
-import static org.openqa.selenium.remote.ErrorCodes.TIMEOUT;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
 
 public class Tests {
-    private static WebDriver driver;
+    private static final WebDriver driver = new ChromeDriver();
 
     @BeforeMethod
     public void setup() {
         System.setProperty("webdriver.chrome.driver", Utils.CHROME_DRIVER_LOCATION);
-        driver = new ChromeDriver();
     }
 
     @Test(testName = "Assert Copyright")
@@ -35,6 +33,9 @@ public class Tests {
         loginPage.enterUsername();
         loginPage.enterPassword();
         loginPage.clickLoginButton();
+        String URL = driver.getCurrentUrl();
+        Utils.captureScreenshot(driver,"Login Failure");
+        Assert.assertEquals(URL, "https://www.sheffield.ac.uk/myaccount", "Login page is not displayed");
     }
 
     @AfterMethod

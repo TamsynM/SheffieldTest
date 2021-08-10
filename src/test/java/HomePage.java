@@ -1,11 +1,10 @@
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class HomePage {
+public class HomePage  extends PageObject{
 
-    @FindBy(className = "large-5")
+    @FindBy(css = "body > div.dialog-off-canvas-main-canvas > div > footer > div.bottom-bar.panel > div > div.large-5.columns.copyright")
     private WebElement footerCopyright;
 
     @FindBy(css = "body > div.muse-bar.smooth-criminal > nav > ul > li.muse-login")
@@ -15,7 +14,8 @@ public class HomePage {
     private WebElement acceptCookiesButton;
 
     public HomePage(WebDriver driver) {
-        super();
+
+        super(driver);
     }
 
     public void clickCookiesButton() {
@@ -27,6 +27,6 @@ public class HomePage {
     }
 
     public String readFooterCopyrightText() {
-        return this.footerCopyright.getText();
+        return footerCopyright.getText();
     }
 }
