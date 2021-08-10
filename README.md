@@ -10,7 +10,7 @@ I have used java 12.0.2 for this project so you might want to have it installed 
 Type in 'java --version' in the command line to check your current version.
 
 # Notes
-I have used TestNG and Maven as we have used this a lot in my current project alongside Selenium and Cucumber tests. I like TestNG as it's nice and lightweight compared to full cucumber testing.
+I have used TestNG and Maven as we have used this a lot in my current project alongside Selenium and Cucumber tests. I like TestNG as it's nice and lightweight compared to full cucumber testing. I have also used intelliJ for this project as it's what I am used to using.
 When running these tests through the commandline it's not picking up the Copyright Icon correctly so the test fails, however it passes if run manually.
 I couldn't figure out how to add the screenshot into the assertion failure itself.
 I didn't know what the login page looking like or the URL so have guessed and added a URL to assert so we could get a test failure.
